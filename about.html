@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="homecss.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">  </script>
+<script>
+$(document).ready(function()
+{
+$(window).scroll(function()
+{
+if(scrollY >20)
+{
+$('.navbar').addClass("sticky");
+}
+else
+{
+    $('.navbar').removeClass("sticky");
+
+}
+});
+
+
+$('.menu-btn').click(function()
+{
+$('.navbar .menu').toggleClass("active");
+$('.menu-btn i').toggleClass("active");
+
+
+});
+});
+
+
+
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.max-width
+{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+/*Navbar Styling*/
+ .navbar
+ {
+    position: fixed;
+    padding: 30px 0;
+   z-index: 999;
+    width: 100% ;
+    font-family: 'Ubuntu',sans-serif;
+ }
+ .navbar.sticky
+ {
+    padding: 30px 0;
+    background: crimson;
+ }
+ .navbar .max-width
+ {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+ .navbar .logo a
+ {
+     color:white;
+    font-size: 35px;
+    font-weight: 600;
+ }
+
+ .navbar .logo a span{
+    color: crimson;
+ }
+ .navbar.sticky .logo a
+ {
+   color:black; 
+ }
+ .navbar.sticky .logo a span
+ {
+   color:white; 
+ }
+ .navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    transition: color 0.3s ease;
+ }
+ .navbar .menu li a
+ {
+color: white;
+font-size: 25px;
+font-weight: 500;
+margin-left: 25px;
+padding-left:50px;
+ }
+ .navbar .menu li a:hover{
+    color: crimson;
+ }
+ .navbar.sticky .menu li a:hover
+ {
+   color: black;
+ }
+ /*Menu Button Styling*/
+.menu-btn
+{
+   color:black;
+   font-size: 30px;
+   cursor: pointer;
+   display: none;
+}
+.menu-btn :hover
+{
+   color:crimson;
+   font-size: 30px;
+   cursor: pointer;
+}
+.sticky .menu-btn  :hover
+{
+   color:white;
+   font-size: 30px;
+   cursor: pointer;
+}
+/*ALL COMMON STYLING CODE*/
+section .title
+{
+   position: relative;
+   font-size: 40px;
+   font-weight: 500;
+   text-align: center;
+   margin-bottom: 60px;
+   padding-bottom: 20px;
+   font-family: 'Ubuntu', sans-serif;
+}
+section .title:before
+{
+   content: "";
+   position: absolute;
+   width: 200px;
+   height: 3px;
+   transform: translateX(-5%);
+   background: black;
+   bottom: 0px;
+   
+}
+section .title:after
+{
+   content: "";
+   position: absolute;
+   
+   font-size: 20px;
+   color: crimson;
+   bottom: -22px;
+  background: white;
+ transform: translateX(-150%);
+ margin-bottom: 11px;
+   
+}
+section
+{
+   padding: 100px 0;
+}
+
+
+
+/*About Section Styling*/
+
+.about, footer,.services,.skills
+{
+   font-family: 'Poppins' sans-serif;  
+}
+
+.about .about-content,.services .serv-content,.skills .skills-content
+{
+   display:flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+}
+.about .about-content .left
+{
+   width: 45%;
+}
+
+.about .about-content .left img{
+   height: 300px;
+   width: 300px;
+   object-fit: cover;
+   border-radius: 50%;
+}
+.about .about-content .right
+{
+   width: 55%;
+}
+
+
+
+
+.about .about-content .right .text
+{
+font-size: 25px;
+font-weight: 600;
+margin-bottom: 10px ;
+}
+
+
+.about .about-content .right .text span
+{
+color: crimson;
+}
+.about .about-content .right p
+{
+   font-size: 15px;
+font-weight: 500;
+margin-bottom: 10px ;
+}
+.about .about-content .right a{
+  
+  
+      display: inline-block;
+      background: crimson;
+      color:#fff;
+      font-size: 20px;
+      padding: 1px 25px;
+      margin-top: 20px;
+      border-radius: 6px;
+      border: 2px solid crimson; 
+   
+ 
+}
+.about .about-content .right a:hover{
+   color:crimson;
+   background: none;
+   border: 2px solid crimson; 
+   color:#111
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Home-Section Styling*/
+.home
+{
+  
+    display: flex;
+
+    background: url("Home data/about.jpg") no-repeat;
+	 background-size: 100% 100%;
+    height: 100vh;
+    color: white;
+    min-height: 500px;
+    font-family: 'Ubuntu',sans-serif;
+}
+.home .max-width
+{
+    margin: auto 0 auto 40px;
+}
+.home .home-content .text-1
+{
+font-size: 20px;
+}
+.home .home-content .text-2
+{
+font-size: 25px;
+font-weight: 600;
+margin-left: -3px;
+}
+.home .home-content .text-3
+{
+font-size: 23px;
+margin: 5px 0;
+}
+.home .home-content .text-3 span
+{
+color: crimson  ;
+font-weight: 500;
+}
+.home .home-content a
+{
+   display: inline-block;
+   background: crimson;
+   color:#fff;
+   font-size: 25px;
+   padding: 12px 36px;
+   margin-top: 20px;
+   border-radius: 6px;
+   border: 2px solid crimson; 
+}
+.home .home-content a:hover
+{
+   color:crimson;
+   background: none;
+   border: 2px solid #fff; 
+
+}
+/*  Service Section */
+.services
+{
+   background: #111;
+   color:#fff;
+}
+.services .title
+{
+   position: relative;
+   font-size: 40px;
+   font-weight: 500;
+   text-align: center;
+   margin-bottom: 60px;
+   padding-bottom: 20px;
+   font-family: 'Ubuntu', sans-serif;  
+}
+.services .title::before
+{
+   background: #fff;
+}
+.services .title::after
+{
+   background: #111;
+   content:"What i provide";
+}
+.services .serv-content .card
+{
+   width: 30%;
+   background: #222;
+   text-align: center;
+   border-radius: 6px;
+   padding: 20px 25px;
+   cursor:pointer;
+   transition: all 0.3s ease;
+}
+.services .serv-content .card:hover
+{
+   background: crimson;
+
+}
+
+.services .serv-content .card i
+{
+   font-size: 50px;
+   color: crimson;
+   transition: all 0.3s ease;
+}
+.services .serv-content .card:hover i
+{
+   color: #fff;
+}
+.services .serv-content .card text
+{
+font-size:25px;
+font-weight: 500;
+margin: 10px 0 7px 0 ;
+}
+.services .serv-content .card .box
+{
+   transition: all 0.3s ease;
+}
+.services .serv-content .card .box:hover
+{
+   transform: scale(1.05);
+}
+/*Skills Section Start*/
+.skills .title:after
+{
+   content: "what i know";
+   transform: translateX(-123%);
+}
+.skills .skills-content .column 
+{
+width: calc(40% - 30px);
+}
+.skills .skills-content .left .text
+{
+font-size:25px ;
+font-weight: 600;
+margin-bottom: 10px;
+}
+.skills .skills-content .right .bars 
+{
+   margin-bottom: 15px;
+}
+.skills .skills-content .right .info 
+{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.skills .skills-content .right span
+{
+   font-weight: 500;
+   font-size: 18px;
+}
+.skills .skills-content .right .line 
+{
+   height: 5px;
+   width: 100%;
+   background: lightgray;
+   position: relative;
+}
+.skills .skills-content .right .line::before
+{
+   content:"";
+   position: absolute;
+height: 100%;
+width: 100%;
+left:0;
+top:0;
+background: crimson;
+
+
+}
+.skills .skills-content .right .html::before
+{
+width: 90%;
+}
+.skills .skills-content .right .css::before
+{
+width: 70%;
+}
+.skills .skills-content .right .jquery::before
+{
+width: 60%;
+}
+.skills .skills-content .right .sql::before
+{
+width: 90%;
+}
+.skills .skills-content .right .oracle::before
+{
+width: 80%;
+}
+.skills .skills-content .right .CPP::before
+{
+width: 90%;
+}
+.skills .skills-content .right .c::before
+{
+width: 75%;
+}
+
+.skills .skills-content .right .ch::before
+{
+width: 95%;
+}
+
+
+/*FOOTER SECTION*/
+footer
+{
+   background: #111;
+   padding: 20px 23px;
+   color:#fff;
+}
+footer span a{
+  color:crimson; 
+  text-decoration: none;
+}
+footer span a:hover
+{
+   text-decoration: underline;
+}
+
+/*RESPONSIVE DESIGN CODE*/
+@media (max-width:1300px)
+{
+.home .max-width
+{
+   margin-left: 0px;
+}
+}
+@media (max-width:1104px)
+{
+   .about .about-content .left img{
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+   }
+}
+@media (max-width:991px)
+{
+   .max-width{
+      padding: 0 50px;
+   }
+}
+@media (max-width:947px)
+{
+
+.navbar .menu
+{
+   position: fixed;
+   height: 100vh;
+width: 100%;
+left:-100%;
+top:0;
+   background: #111;
+   text-align: center;
+   text-align: center;
+   padding: 80px;
+   transition: all 0.3s ease;
+}
+.navbar .menu li 
+{
+   display: block;
+}
+.navbar .menu li a
+{
+   display: inline-block;
+   margin-top: 20px;
+   font-size: 25px;
+}
+.menu-btn i.active:before
+{
+   content:"\f00d";
+}
+.navbar .menu.active
+{
+   left:0;
+}
+.menu-btn
+{
+   color:white;
+   display: block;
+   z-index: 999;
+}
+
+.home .home-content .text-2
+{
+font-size: 70px;
+
+}
+.home .home-content .text-3
+{
+font-size: 35px;
+}
+.home .home-content a
+{
+   font-size: 23px;
+   padding: 10px 30px ;
+}
+.max-width
+{
+   max-width: 800px;
+}
+.about .about-content .column
+{
+width: 100%;
+
+}
+.about .about-content .left
+{
+display: flex;
+justify-content: center;
+margin: 0 auto 60px;
+
+}
+.about .about-content .right
+{
+   flex: 100%;
+
+}
+.services .serv-content .card
+{
+   width: 50%;
+   margin-bottom: 20px;
+}
+}
+@media (max-width:690)
+{
+  
+   .home .home-content .text-2
+   {
+   font-size: 50px;
+   
+   }
+   .home .home-content .text-3
+   {
+   font-size: 27px;
+   }
+   .services .serv-content .card
+{
+   width: 100%;
+  
+}
+   
+}
+
+
+</style>
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="#">Talented-<span>Pak</span></a>
+            </div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+               
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+
+                </i>
+            </div>
+        </div>
+    </nav>
+
+  <!--about Section Start--> 
+  <section class="about" id="about">
+        <h2 class="title">OUR OFFERINGS</h2>
+    <div class="max-width">
+        <div class="about-content">
+           <div class="column left">
+            <img src="Home data/Self.jpeg" alt="">
+           </div>
+           <div class="column right"><div class="text">
+            
+Talented-			<span>Pak Offerings</span>
+           </div>
+           <p>The features include an advanced search function, animated statistics, testimonials slider, brand logo, working contact form and social icons to name a few. Careers also comes with blog pages where you can share tips and tricks for both employers and employees. Pick Careers and create an online platform that helps build and grow companies. </p>
+			<a href="#">Apply for Job Now</a>	
+        </div>
+        </div>
+    </div>
+</section>
+<!-- Service Section-->
+<section class="services" id="services">
+<div class="max-width">
+    <h2 class="title">Our Services</h2>
+    <div class="serv-content">
+      <div class="card">
+<div class="box">
+    <i class="fa fa-search" aria-hidden="true"></i>
+<div class="text">Job Search</div>
+<p>I am Full-Time Web-Developer. I am Expert at Mern Stack.I had 4+ Years of Experience of Web-Developing</p>
+</div>
+      </div>
+      <div class="card">
+        <div class="box">
+<i class="fa fa-address-book" aria-hidden="true"></i>
+        <div class="text">Apply for Job</div>
+        <p>I am Full-Time Desktop App Developer. I am Expert at Flutter.I had 4+ Years of Experience of App-Developement</p>
+        </div>
+              </div>
+              <div class="card">
+                <div class="box">
+                   <i class="fa fa-upload" aria-hidden="true"></i>
+                <div class="text">Upload Job for Clients</div>
+                <p>I am Full-Time Data-Base Developer. I am Expert at SQL and Oracle.I had 4+ Years of Experience of Data-Base Development</p>
+                </div>
+                      </div>
+    </div>
+</div>
+</section>
+<!-- Skill Section -->  
+<section class="skills" id="skills">
+    <div class="max-width">
+        <h2 class="title">
+            Our Description
+        </h2>
+        <div class="skills-content">
+            <div class="column left">
+                <div class="text">
+                   
+                </div>
+                <p>Talented-Pak – hence the name – is a free recruitment website template for job boards, job portals and job listing projects. Due to its amazing and organized structure, you will have a small breeze using and modifying Careers to match your heart’s content. However, Careers is already amazing, modern and professional looking out of the box; meaning, you will need to invest little work to fine-tune the design accordingly. But utilizing Careers exactly as is will give you the fastest solution to your recruitment website idea you have.</p>
+            </div>
+         
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- footer section      -->  
+<footer>
+    <span>
+        <center>
+
+            Created by  <a href="#">Hamza Akhtar</a> <i class="fa fa-copyright" aria-hidden="true"></i> | 2022 All Right-Reserved .  
+        </center>
+    </span>
+</footer>
+
+    <script src="homejs.js"></script>
+</body>
+</html>
